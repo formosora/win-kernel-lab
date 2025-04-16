@@ -10,8 +10,11 @@
  * hiding the flow.
  */
 
-#include <ntddk.h>
+#include <ntifs.h>
 #include <ntstrsafe.h>
+
+/* Exported by ntoskrnl but absent from some kits' public headers. */
+NTKERNELAPI PUCHAR PsGetProcessImageFileName(_In_ PEPROCESS Process);
 
 #define POC_DEVICE_NAME  L"\\Device\\PocProcessWatch"
 #define POC_SYMLINK_NAME L"\\DosDevices\\PocWatch"
