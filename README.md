@@ -11,6 +11,11 @@ small, compiles clean, and exists to teach exactly one mechanism.
 | # | Name | Mechanism it teaches |
 | - | ---- | -------------------- |
 | 01 | [process-watch](poc01-process-watch) | `PsSetCreateProcessNotifyRoutine`, device objects, IOCTL (`METHOD_BUFFERED`), spin-locked ring buffer, IRP completion |
+| 02 | [mem-rw](poc02-mem-rw) | `MmCopyVirtualMemory`, cross-process memory access, IOCTL input validation, safe transfer caps |
+
+## Roadmap
+
+- **03** — ETW consumer → live web dashboard (kernel meets the web stack)
 
 ## Toolchain
 
@@ -39,9 +44,3 @@ small, compiles clean, and exists to teach exactly one mechanism.
    poc01-reader.exe     :: watch START/STOP lines roll in
    sc stop poc01
    ```
-
-## Roadmap
-
-- **02** — memory read/write driver, done cleanly (inspired by studying public
-  DrvRW-style samples, written from scratch)
-- **03** — ETW consumer → live web dashboard (kernel meets the web stack)
