@@ -12,10 +12,11 @@ small, compiles clean, and exists to teach exactly one mechanism.
 | - | ---- | -------------------- |
 | 01 | [process-watch](poc01-process-watch) | `PsSetCreateProcessNotifyRoutine`, device objects, IOCTL (`METHOD_BUFFERED`), spin-locked ring buffer, IRP completion |
 | 02 | [mem-rw](poc02-mem-rw) | `MmCopyVirtualMemory`, cross-process memory access, IOCTL input validation, safe transfer caps |
+| 03 | [etw-dashboard](poc03-etw-dashboard) | ETW realtime sessions (KrabsETW), event schema parsing, SSE streaming, minimal Winsock HTTP |
 
 ## Roadmap
 
-- **03** — ETW consumer → live web dashboard (kernel meets the web stack)
+- **04** — minifilter: watch file creates/writes in a directory tree
 
 ## Toolchain
 
