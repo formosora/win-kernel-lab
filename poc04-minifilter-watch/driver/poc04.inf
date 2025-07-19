@@ -1,0 +1,25 @@
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = "ActivityMonitor"
+ClassGuid   = {b86dff51-a31e-4bac-b3cf-e8cfe75c9fc2}
+Provider    = %PocLab%
+DriverVer   =
+CatalogFile = poc04.cat
+
+[DefaultInstall.NTamd64]
+CopyFiles = @poc04.sys
+AddReg    = Minifilter.AddReg
+
+[DestinationDirs]
+DefaultDestDir = 12            ; %windir%\system32\drivers
+
+[Minifilter.AddReg]
+HKR,,DebugFlags,0x00010001,0x0
+HKR,"Instances","DefaultInstance",0x00000000,%InstName%
+HKR,"Instances\"%InstName%,"Altitude",0x00000000,%Altitude%
+HKR,"Instances\"%InstName%,"Flags",0x00010001,0x0
+
+[Strings]
+PocLab   = "win-kernel-lab"
+InstName = "Poc04 Instance"
+Altitude = "385100"
